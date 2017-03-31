@@ -1,0 +1,17 @@
+<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3">先选择一个任务</h1>
+</div>
+<div class="wrapper-md" ng-controller="ChoiceProjectController">
+
+        <div class="col-lg-3 col-md-4 col-sm-6" ng-repeat="item in projectAction">
+            <a ui-sref="{{item.url}}" >
+                <div class="panel b-a">
+                    <div class="panel-heading text-center bg-info no-border">
+                        <h4 class="text-u-c m-b-none">
+                            <span class="text-2x text-lt">{{item.name}}</span>
+                        </h4>
+                    </div>
+                </div>
+            </a>
+        </div>
+</div>

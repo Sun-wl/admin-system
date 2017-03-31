@@ -1,0 +1,133 @@
+<div ng-controller="sPersonalInfoCtrl">
+    <div class="bg-light lter b-b wrapper-md">
+        <h1 class="m-n font-thin h3">添加就业信息</h1>
+    </div>
+    <div class="wrapper-md" ng-controller="addInfoCtrl">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <form class="bs-example form-horizontal">
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">姓名</label>
+                                <div class="col-lg-4">
+                                    <input type="text" class="form-control" ng-model="form.name" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">性别</label>
+                                <div class="col-lg-4" ng-model="form.sex">
+                                    <div class="control-label">
+                                        <input type="radio" id="man" class="col-lg-1" select-option name="sex" value="男">
+                                        <label for="man" class="col-lg-2 text-left">男</label>
+                                        <input type="radio" id="woman" class="col-lg-1" select-option name="sex" value="女">
+                                        <label for="woman" class="col-lg-2 text-left">女</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">学号</label>
+                                <div class="col-lg-4">
+                                    <input type="number" class="form-control" ng-model="form.id" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">系部</label>
+                                <div class="col-lg-4">
+                                    <select type="text" class="form-control"
+                                            ng-model="form.pasternId"
+                                            ng-options="pastern.id as pastern.name for pastern in pasterns"
+                                            ng-change="changePast()" required>
+                                        <option value="">---请选择---</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">专业</label>
+                                <div class="col-lg-4">
+                                    <select type="text" class="form-control"
+                                            ng-model="form.professionalId"
+                                            ng-options="prof.id as prof.name for prof in profs | basePast : form.pasternId"
+                                            ng-change="changeProf()" required>
+                                        <option value="">---请选择---</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">年级</label>
+                                <div class="col-lg-4">
+                                    <select type="text" class="form-control"
+                                            ng-model="form.grade"
+                                            ng-options="grade.value as grade.name for grade in app.grades"
+                                            required>
+                                        <option value="">---请选择---</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">班级</label>
+                                <div class="col-lg-4">
+                                    <select type="text" class="form-control"
+                                            ng-model="form.clazz"
+                                            ng-options="clazz.id as clazz.name for clazz in clazzs | basePast : form.pasternId | baseProf : form.professionalId | baseGrade : form.grade"
+                                            required>
+                                        <option value="">---请选择---</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">生源地</label>
+                                <div class="col-lg-4">
+                                    <select class="form-control" ng-model="form.origin"
+                                            ng-options="province.id as province.name for province in provinces" required>
+                                        <option value="">---请选择---</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">毕业方向</label>
+                                <div class="col-lg-4">
+                                    <select class="form-control" ng-model="form.direction"
+                                            ng-options="direction.value as direction.name for direction in app.direction" required>
+                                        <option value="">----请选择----</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">就业省份</label>
+                                <div class="col-lg-4">
+                                    <select class="form-control" ng-model="form.employProv"
+                                            ng-options="province.id as province.name for province in provinces" required>
+                                        <option value="">---请选择---</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">就业单位</label>
+                                <div class="col-lg-4">
+                                    <input type="text" class="form-control" ng-model="form.employCompany" required>
+                                </div>
+                            </div>
+
+
+                        </form>
+                    </div>
+                    <div align="center">
+                        <button class="btn m-b-xs w-sm btn-lg btn-info" type="submit" ng-click="submit()">提交</button>
+                    </div>
+                    <br/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

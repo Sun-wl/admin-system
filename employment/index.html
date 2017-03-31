@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <title>毕业生就业信息管理系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="css/framework/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="css/framework/animate.css" type="text/css" />
+    <link rel="stylesheet" href="css/framework/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/framework/simple-line-icons.css" type="text/css" />
+    <link rel="stylesheet" href="css/framework/font.css" type="text/css" />
+    <link rel="stylesheet" href="css/framework/app.css" type="text/css" />
+    <link rel="stylesheet" href="js/framework/jquery/datatables/dataTables.bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="css/framework/daterangepicker.css" type="text/css">
+    <link rel="stylesheet" href="css/framework/zTreeStyle/zTreeStyle.css" type="text/css">
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        table{
+            overflow-x: auto;
+        }
+        table tr td,table tr th{
+            text-align: center;
+            word-break: keep-all;
+        }
+    </style>
+</head>
+
+<body ng-controller="AppCtrl">
+<div class="app" id="app" ng-class="{'app-header-fixed':app.settings.headerFixed, 'app-aside-fixed':app.settings.asideFixed, 'app-aside-folded':app.settings.asideFolded, 'app-aside-dock':app.settings.asideDock, 'container':app.settings.container}" ui-view></div>
+
+
+<!-- jQuery -->
+<script src="https://cdn.staticfile.org/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/datatables/1.10.13/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.staticfile.org/datatables/1.10.13/js/dataTables.bootstrap.min.js"></script>
+
+<!-- Angular-->
+<script src="https://cdn.staticfile.org/angular.js/1.3.20/angular.min.js"></script>
+<script src="https://cdn.staticfile.org/angular.js/1.3.20/angular-animate.min.js"></script>
+<script src="https://cdn.staticfile.org/angular.js/1.3.20/angular-cookies.min.js"></script>
+<script src="https://cdn.staticfile.org/angular.js/1.3.20/angular-resource.min.js"></script>
+<script src="https://cdn.staticfile.org/angular.js/1.3.20/angular-sanitize.min.js"></script>
+<script src="https://cdn.staticfile.org/angular.js/1.3.20/angular-touch.min.js"></script>
+
+<!-- Vendor -->
+<script src="js/framework/angular/angular-ui-router/angular-ui-router.js"></script>
+<script src="js/framework/angular/ngstorage/ngStorage.js"></script>
+
+<!-- bootstrap -->
+<script src="js/framework/angular/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<!-- lazyload -->
+<script src="js/framework/angular/oclazyload/ocLazyLoad.js"></script>
+
+<!-- App -->
+<script src="js/app.js"></script>
+<script src="js/config.js"></script>
+<script src="js/config.lazyload.js"></script>
+<script src="js/config.router.js"></script>
+<script src="js/main.js"></script>
+<script src="js/framework/services/ui-load.js"></script>
+
+<script src="js/framework/directives/ui-jq.js"></script>
+<script src="js/framework/directives/ui-module.js"></script>
+<script src="js/framework/directives/ui-nav.js"></script>
+
+<script src="js/framework/directives/ui-shift.js"></script>
+<script src="js/framework/directives/ui-toggleclass.js"></script>
+
+<script src="js/framework/directives/ui-validate.js"></script>
+<script src="js/framework/bootstrap.js"></script>
+
+<script type="text/javascript" src="js/framework/ztree/jquery.ztree.core.js"></script>
+<script type="text/javascript" src="js/framework/ztree/jquery.ztree.excheck.js"></script>
+
+<!-- Lazy loading -->
+</body>
+</html>

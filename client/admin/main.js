@@ -12,7 +12,7 @@ angular.module('app')
 
       // config
       $scope.app = {
-		host: "http://127.0.0.1:8000",
+		host: "http://127.0.0.1:8080",
         name: 'Angulr',
         version: '1.3.3',
         // for chart colors
