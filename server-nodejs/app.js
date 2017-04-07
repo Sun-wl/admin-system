@@ -6,8 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var utils = require('./utils');
 var cors = require('cors');
-var mysql = require('node-mysql');
-var models = require('./models/index');
+var sqlite3 = require('sqlite3');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -35,12 +34,6 @@ app.use('/news', news);
 
 
 
-models.sequelize.sync({force: false}).then(function() {
-    console.log("Server successed to start");
-}).catch(function(err){
-    console.log("Server failed to start due to error: %s", err);
-});
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -53,7 +46,7 @@ app.use(function(req, res, next) {
 
 // development error handler
 // will print stacktrace
-if (app.get('env') === 'test') {
+if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
